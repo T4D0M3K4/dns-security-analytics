@@ -4,7 +4,7 @@ The root [MIT License](LICENSE), copyright (c) 2026 Luka Šućur, covers origina
 
 ## Source-tree review
 
-No vendored third-party implementation, dependency binary, upstream UI bundle, font, logo or screenshot is included in the reviewed public source tree. The Superset YAML files are sanitized project dashboard/dataset/chart definitions; Python helpers and CSS are project configuration and automation, not a copy of the Superset implementation. Existing dataset attribution is retained in docs/public_datasets/provenance.json and docs/public_dns_dataset_analysis.md. This review does not claim that third-party software itself is MIT licensed.
+No vendored third-party implementation, dependency binary, upstream UI bundle, font or logo is included in the reviewed public source tree. The Superset YAML files are sanitized project dashboard/dataset/chart definitions; Python helpers and CSS are project configuration and automation, not a copy of the Superset implementation. The dashboard screenshots in `docs/images/` show project dashboards rendered by Apache Superset, including aggregate CTU results and selected observed values; they do not relicense Superset or the underlying datasets. Existing dataset attribution is retained in docs/public_datasets/provenance.json and docs/public_dns_dataset_analysis.md. This review does not claim that third-party software itself is MIT licensed.
 
 ## External software
 
@@ -31,7 +31,7 @@ Sources: Stratosphere Laboratory, CTU in Prague / Malware Capture Facility Proje
 
 Attribution recorded by the project: **Stratosphere. (2015). Stratosphere Laboratory Datasets.** Source download provenance and observed hashes are in [provenance.json](docs/public_datasets/provenance.json). Consult the [publisher FAQ](https://www.stratosphereips.org/datasets-faq), dataset READMEs and applicable terms. No dataset-specific redistribution license was identified in the downloaded READMEs; do not transfer CTU-13 licensing to these different captures.
 
-**MIT does not grant rights to redistribute CTU PCAPs, publisher documents, extracted traffic or third-party material.** The export includes project-authored references/provenance only, not PCAPs, Zeek logs, publisher README copies or binary payloads. Download the allowlisted files from their publishers for local analysis. Do not execute captured content or contact captured domains.
+**MIT does not grant rights to redistribute CTU PCAPs, publisher documents, extracted traffic or third-party material.** The repository includes project-authored references/provenance and dashboard screenshots of analytical results, not raw PCAPs, Zeek logs, publisher README copies or binary payloads. Download the allowlisted files from their publishers for local analysis. Do not execute captured content or contact captured domains.
 
 Upstream Apache Superset attribution (from its NOTICE, retained here as acknowledgement):
 

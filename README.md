@@ -11,6 +11,55 @@ CTU Normal PCAP + CTU Malware PCAP
   → provenance-based reporting views → Apache Superset
 ```
 
+## Verified reference results
+
+| Metric | Result |
+|---|---:|
+| DNS events | 5,709 |
+| Source-minute windows | 183 |
+| Alert records | 135 |
+| Unique alerting windows | 71 |
+| Superset dashboards | 3 |
+| Configurable rule-based detectors | 4 |
+
+A source-minute window groups one source IP's DNS events within one UTC minute. Multiple detectors can activate in the same window, so alert records and unique alerting windows are different counts.
+
+### CTU comparison findings
+
+| Capture | DNS events / lexical rows | Source-minute windows | HIGH_DNS_FREQUENCY | HIGH_NXDOMAIN_RATIO | DGA_LIKE | TUNNEL_LIKE |
+|---|---:|---:|---:|---:|---:|---:|
+| CTU Normal | 3,029 | 110 | 4 | 0 | 0 | 0 |
+| CTU Malware | 2,680 | 73 | 0 | 67 | 64 | 0 |
+| Total | 5,709 | 183 | 4 | 67 | 64 | 0 |
+
+- **DGA_LIKE:** activated in **64/73 malware windows (87.67%)**.
+- **HIGH_NXDOMAIN_RATIO:** activated in **67/73 malware windows (91.78%)**.
+- Normal traffic activated only HIGH_DNS_FREQUENCY, in **4/110 windows (3.64%)**. Neither capture activated TUNNEL_LIKE.
+
+**These are descriptive rule activation rates, not precision, recall or F1.** Publisher capture labels do not establish event/window ground truth or confirmed true/false positives. The 64 DGA-like windows also activated the NXDOMAIN rule; overlapping alerts explain the 135 records across 71 unique alerting windows. These measured results are not hardcoded acceptance targets. See the [CTU findings and provenance](docs/public_dns_dataset_analysis.md) and [release audit](docs/release_audit.md) for evidence and verification limits.
+
+## Dashboard Gallery
+
+Saved views of the three Apache Superset dashboards. Click an image to view it at full size; local dashboard links below require the running application.
+
+### DNS Traffic Overview
+
+Compares capture volumes, response codes, query types, queried names, source IPs and activity distributions across the two CTU captures.
+
+[![DNS Traffic Overview: 5,709 DNS events with capture, response-code, query-type and source breakdowns](docs/images/dns-traffic-overview.png)](docs/images/dns-traffic-overview.png)
+
+### DNS Security & Anomaly Analysis
+
+Shows alert counts by detector, severity, capture and source, alongside window-level feature plots and evidence explaining the satisfied thresholds. Overlapping alert types are retained.
+
+[![DNS Security and Anomaly Analysis: 135 alert records, detector counts, feature plots and threshold evidence](docs/images/dns-security-analysis.png)](docs/images/dns-security-analysis.png)
+
+### CTU Security Comparison
+
+Compares the 110 normal and 73 malware source-minute windows using per-detector activation counts and rates, actual feature summaries and representative high-entropy windows. Capture membership describes provenance, not event maliciousness.
+
+[![CTU Security Comparison: capture totals, descriptive rule activation rates and observed window features](docs/images/ctu-security-comparison.png)](docs/images/ctu-security-comparison.png)
+
 ## Stack and prerequisites
 
 Python **>=3.11**, psycopg 3, PostgreSQL 17, digest-pinned official Zeek 9.0.1 and Apache Superset 6.1.0 images, Docker Compose v2, pytest and Git. Use Linux/WSL with Docker access, Python venv and curl. Reserve loopback **55434** (analytics) and **8089** (Superset); allow several GB for container images. Superset metadata has its own PostgreSQL volume and no published database port.
@@ -96,25 +145,9 @@ Login at [localhost:8089](http://localhost:8089) with your private admin credent
 
 [Superset documentation](docs/superset.md) covers registration, native filters, reusable metrics, sanitized export/import, health checks and troubleshooting. Analytical connections use Docker service networking and a read-only PostgreSQL role; metadata is separate from facts.
 
-## Dashboard previews
+## Verification and shutdown
 
-Screenshot placeholders for the public README (no screenshots or captured query data are included yet):
-
-| Dashboard | Preview to add after sanitization |
-|---|---|
-| DNS Traffic Overview | Capture comparison, response codes and activity distribution |
-| DNS Security & Anomaly Analysis | Alert types and explainable evidence, with private UI details removed |
-| CTU Security Comparison | Descriptive detector activation and feature summaries |
-
-## Verified reference results
-
-| Capture | DNS events / lexical rows | Source-minute windows | Frequency alerts | NXDOMAIN alerts | DGA-like alerts | Tunnel-like alerts |
-|---|---:|---:|---:|---:|---:|---:|
-| CTU Normal |3029|110|4|0|0|0|
-| CTU Malware |2680|73|0|67|64|0|
-| Total |5709|183|4|67|64|0|
-
-**5,709 CTU DNS events, 183 source-minute windows, 135 alert records, and 71 distinct alerting windows** across **3 Superset dashboards**. DGA_LIKE activated in **64 of 73 CTU Malware windows (87.67%)**. This is a descriptive activation rate, not confirmed precision, recall or F1; 64 windows have overlapping NXDOMAIN/DGA-like alerts. These observations are not hardcoded acceptance targets. See the [release audit](docs/release_audit.md) for actual verification and test results.
+See the [release audit](docs/release_audit.md) for recorded verification results and reproduction limitations.
 
 ```bash
 .venv/bin/python -m pytest -q

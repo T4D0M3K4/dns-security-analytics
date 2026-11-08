@@ -84,4 +84,4 @@ git status --short
 git commit -m "Initial CTU-only DNS Security Analytics release (MIT)"
 ```
 
-The initial commit is required before the normal runner's `HEAD` provenance comparison. Follow [reproduction_guide.md](reproduction_guide.md) after committing. Screenshots are explicit README placeholders; no private UI screenshot/session data is shipped. Temporary verification data, secrets and tool outputs are retained outside the export and are not runtime dependencies.
+The initial commit is required before the normal runner's `HEAD` provenance comparison. Follow [reproduction_guide.md](reproduction_guide.md) after committing. At the time of this export review, screenshots were README placeholders. The README now includes dashboard screenshots from `docs/images/`; those later additions are outside the original export verification scope. Temporary verification data, secrets and tool outputs are retained outside the export and are not runtime dependencies.
