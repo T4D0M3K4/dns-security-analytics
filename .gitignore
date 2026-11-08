@@ -1,0 +1,63 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Captures and generated logs, wherever they are stored
+*.[pP][cC][aA][pP]
+*.[pP][cC][aA][pP][nN][gG]
+*.[cC][aA][pP]
+*.[pP][cC][aA][pP].*
+*.[pP][cC][aA][pP][nN][gG].*
+*.log
+*.log.*
+# Generated labels from previous local experiments remain private.
+ground_truth.json
+
+# Keep data directory structure, but never its contents
+/data/**/*
+!/data/**/
+!/data/**/.gitkeep
+
+# Python caches, environments, and packaging output
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+ENV/
+.python-version
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test, coverage, and tooling output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.ipynb_checkpoints/
+
+# Local database files and exports
+*.sqlite
+*.sqlite3
+*.dump
+/artifacts/
+/reports/
+
+# Editor and operating system files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

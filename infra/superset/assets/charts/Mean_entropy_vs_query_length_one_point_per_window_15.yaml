@@ -1,0 +1,58 @@
+slice_name: "Mean entropy vs query length \xB7 one point per window"
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: bubble_v2
+params:
+  viz_type: bubble_v2
+  datasource: 2__table
+  time_range: No filter
+  granularity_sqla: window_start
+  adhoc_filters: []
+  row_limit: 10000
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: .3f
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  entity: window_key
+  series: capture_name
+  x: Window mean length
+  y: Window mean entropy
+  size: Window queries
+  logXAxis: false
+  logYAxis: false
+  max_bubble_size: '15'
+  x_axis_label: Mean length
+  y_axis_label: Entropy (bits)
+  y_axis_title_margin: 50
+query_context: '{"datasource": {"id": 2, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "window_start", "is_timeseries": false, "columns":
+  ["window_key", "capture_name"], "metrics": ["Window mean length", "Window mean entropy",
+  "Window queries"]}], "form_data": {"viz_type": "bubble_v2", "datasource": "2__table",
+  "time_range": "No filter", "granularity_sqla": "window_start", "adhoc_filters":
+  [], "row_limit": 10000, "groupby": [], "color_scheme": "supersetColors", "show_legend":
+  true, "legendOrientation": "bottom", "legendType": "scroll", "legendMargin": 20,
+  "y_axis_format": ".3f", "x_axis_time_format": "%H:%M", "time_format": "%Y-%m-%d
+  %H:%M:%S", "show_markers": true, "markerSize": 5, "rich_tooltip": true, "truncate_metric":
+  true, "truncate_cells": true, "table_timestamp_format": "%Y-%m-%d %H:%M:%S", "entity":
+  "window_key", "series": "capture_name", "x": "Window mean length", "y": "Window
+  mean entropy", "size": "Window queries", "logXAxis": false, "logYAxis": false, "max_bubble_size":
+  "15", "x_axis_label": "Mean length", "y_axis_label": "Entropy (bits)", "y_axis_title_margin":
+  50}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: 56a93cfa-8447-5160-8ca5-5b787e8bb5cc
+version: 1.0.0
+dataset_uuid: e063abf4-29f2-55c8-a076-a7efd29f09bd

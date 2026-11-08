@@ -1,0 +1,53 @@
+slice_name: "Descriptive detector activation \xB7 percent of capture windows"
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  viz_type: echarts_timeseries_bar
+  datasource: 5__table
+  time_range: No filter
+  granularity_sqla: null
+  adhoc_filters: []
+  row_limit: 10000
+  groupby:
+  - capture_name
+  color_scheme: supersetColors
+  show_legend: true
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: .2f
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  x_axis: detector
+  metrics:
+  - Activation rate (%)
+  y_axis_bounds:
+  - 0
+  - 100
+  truncateYAxis: true
+query_context: '{"datasource": {"id": 5, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": null, "is_timeseries": false, "columns": ["detector",
+  "capture_name"], "metrics": ["Activation rate (%)"], "orderby": [["Activation rate
+  (%)", false]]}], "form_data": {"viz_type": "echarts_timeseries_bar", "datasource":
+  "5__table", "time_range": "No filter", "granularity_sqla": null, "adhoc_filters":
+  [], "row_limit": 10000, "groupby": ["capture_name"], "color_scheme": "supersetColors",
+  "show_legend": true, "legendOrientation": "bottom", "legendType": "scroll", "legendMargin":
+  20, "y_axis_format": ".2f", "x_axis_time_format": "%H:%M", "time_format": "%Y-%m-%d
+  %H:%M:%S", "show_markers": true, "markerSize": 5, "rich_tooltip": true, "truncate_metric":
+  true, "truncate_cells": true, "table_timestamp_format": "%Y-%m-%d %H:%M:%S", "x_axis":
+  "detector", "metrics": ["Activation rate (%)"], "y_axis_bounds": [0, 100], "truncateYAxis":
+  true}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: 79b96b2a-e370-519e-8900-013ea2443619
+version: 1.0.0
+dataset_uuid: b98d6dd0-d9d2-568b-8c84-56ef51988ec5

@@ -1,0 +1,49 @@
+slice_name: "Activity distribution \xB7 events per source-minute"
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  viz_type: echarts_timeseries_bar
+  datasource: 2__table
+  time_range: No filter
+  granularity_sqla: window_start
+  adhoc_filters: []
+  row_limit: 10000
+  groupby:
+  - capture_name
+  color_scheme: supersetColors
+  show_legend: true
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  x_axis: query_count
+  metrics:
+  - Windows
+query_context: '{"datasource": {"id": 2, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "window_start", "is_timeseries": false, "columns":
+  ["query_count", "capture_name"], "metrics": ["Windows"], "orderby": [["Windows",
+  false]]}], "form_data": {"viz_type": "echarts_timeseries_bar", "datasource": "2__table",
+  "time_range": "No filter", "granularity_sqla": "window_start", "adhoc_filters":
+  [], "row_limit": 10000, "groupby": ["capture_name"], "color_scheme": "supersetColors",
+  "show_legend": true, "legendOrientation": "bottom", "legendType": "scroll", "legendMargin":
+  20, "y_axis_format": ",.0f", "x_axis_time_format": "%H:%M", "time_format": "%Y-%m-%d
+  %H:%M:%S", "show_markers": true, "markerSize": 5, "rich_tooltip": true, "truncate_metric":
+  true, "truncate_cells": true, "table_timestamp_format": "%Y-%m-%d %H:%M:%S", "x_axis":
+  "query_count", "metrics": ["Windows"]}, "result_format": "json", "result_type":
+  "full"}'
+cache_timeout: null
+uuid: 41d01e77-ad30-579c-9065-109bc54ca5a0
+version: 1.0.0
+dataset_uuid: e063abf4-29f2-55c8-a076-a7efd29f09bd

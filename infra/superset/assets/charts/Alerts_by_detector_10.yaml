@@ -1,0 +1,48 @@
+slice_name: Alerts by detector
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  viz_type: echarts_timeseries_bar
+  datasource: 3__table
+  time_range: No filter
+  granularity_sqla: window_start
+  adhoc_filters: []
+  row_limit: 10000
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: false
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  x_axis: alert_type
+  metrics:
+  - Alerts
+  orientation: horizontal
+query_context: '{"datasource": {"id": 3, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "window_start", "is_timeseries": false, "columns":
+  ["alert_type"], "metrics": ["Alerts"], "orderby": [["Alerts", false]]}], "form_data":
+  {"viz_type": "echarts_timeseries_bar", "datasource": "3__table", "time_range": "No
+  filter", "granularity_sqla": "window_start", "adhoc_filters": [], "row_limit": 10000,
+  "groupby": [], "color_scheme": "supersetColors", "show_legend": false, "legendOrientation":
+  "bottom", "legendType": "scroll", "legendMargin": 20, "y_axis_format": ",.0f", "x_axis_time_format":
+  "%H:%M", "time_format": "%Y-%m-%d %H:%M:%S", "show_markers": true, "markerSize":
+  5, "rich_tooltip": true, "truncate_metric": true, "truncate_cells": true, "table_timestamp_format":
+  "%Y-%m-%d %H:%M:%S", "x_axis": "alert_type", "metrics": ["Alerts"], "orientation":
+  "horizontal"}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: e3828ec9-a82f-50af-9718-77b055a3fb4a
+version: 1.0.0
+dataset_uuid: 04919e6d-982d-5c52-b997-90b1f65d3ff1

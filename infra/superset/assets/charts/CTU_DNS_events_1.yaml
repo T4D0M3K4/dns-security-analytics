@@ -1,0 +1,44 @@
+slice_name: CTU DNS events
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  viz_type: big_number_total
+  datasource: 1__table
+  time_range: No filter
+  granularity_sqla: event_timestamp
+  adhoc_filters: []
+  row_limit: 10000
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: false
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  metric: DNS events
+query_context: '{"datasource": {"id": 1, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "event_timestamp", "is_timeseries": false, "columns":
+  [], "metrics": ["DNS events"]}], "form_data": {"viz_type": "big_number_total", "datasource":
+  "1__table", "time_range": "No filter", "granularity_sqla": "event_timestamp", "adhoc_filters":
+  [], "row_limit": 10000, "groupby": [], "color_scheme": "supersetColors", "show_legend":
+  false, "legendOrientation": "bottom", "legendType": "scroll", "legendMargin": 20,
+  "y_axis_format": ",.0f", "x_axis_time_format": "%H:%M", "time_format": "%Y-%m-%d
+  %H:%M:%S", "show_markers": true, "markerSize": 5, "rich_tooltip": true, "truncate_metric":
+  true, "truncate_cells": true, "table_timestamp_format": "%Y-%m-%d %H:%M:%S", "metric":
+  "DNS events"}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: 07f715af-4c1e-58a1-b196-36767e52ae1c
+version: 1.0.0
+dataset_uuid: 9c768e8f-5a80-5f69-a0fb-39e88e5b0d1a

@@ -1,0 +1,48 @@
+slice_name: DNS events by source IP
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  viz_type: echarts_timeseries_bar
+  datasource: 1__table
+  time_range: No filter
+  granularity_sqla: event_timestamp
+  adhoc_filters: []
+  row_limit: 10000
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: false
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  x_axis: source_ip
+  metrics:
+  - DNS events
+  orientation: horizontal
+query_context: '{"datasource": {"id": 1, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "event_timestamp", "is_timeseries": false, "columns":
+  ["source_ip"], "metrics": ["DNS events"], "orderby": [["DNS events", false]]}],
+  "form_data": {"viz_type": "echarts_timeseries_bar", "datasource": "1__table", "time_range":
+  "No filter", "granularity_sqla": "event_timestamp", "adhoc_filters": [], "row_limit":
+  10000, "groupby": [], "color_scheme": "supersetColors", "show_legend": false, "legendOrientation":
+  "bottom", "legendType": "scroll", "legendMargin": 20, "y_axis_format": ",.0f", "x_axis_time_format":
+  "%H:%M", "time_format": "%Y-%m-%d %H:%M:%S", "show_markers": true, "markerSize":
+  5, "rich_tooltip": true, "truncate_metric": true, "truncate_cells": true, "table_timestamp_format":
+  "%Y-%m-%d %H:%M:%S", "x_axis": "source_ip", "metrics": ["DNS events"], "orientation":
+  "horizontal"}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: 11b6c008-afa7-5aed-a0ac-2d56bc2736fc
+version: 1.0.0
+dataset_uuid: 9c768e8f-5a80-5f69-a0fb-39e88e5b0d1a

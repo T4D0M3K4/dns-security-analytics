@@ -1,0 +1,50 @@
+slice_name: Severity distribution
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: pie
+params:
+  viz_type: pie
+  datasource: 3__table
+  time_range: No filter
+  granularity_sqla: window_start
+  adhoc_filters: []
+  row_limit: 10000
+  groupby:
+  - severity
+  color_scheme: supersetColors
+  show_legend: true
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  metric: Alerts
+  donut: true
+  show_labels: true
+  labels_outside: false
+  label_type: key_value
+query_context: '{"datasource": {"id": 3, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "window_start", "is_timeseries": false, "columns":
+  ["severity"], "metrics": ["Alerts"]}], "form_data": {"viz_type": "pie", "datasource":
+  "3__table", "time_range": "No filter", "granularity_sqla": "window_start", "adhoc_filters":
+  [], "row_limit": 10000, "groupby": ["severity"], "color_scheme": "supersetColors",
+  "show_legend": true, "legendOrientation": "bottom", "legendType": "scroll", "legendMargin":
+  20, "y_axis_format": ",.0f", "x_axis_time_format": "%H:%M", "time_format": "%Y-%m-%d
+  %H:%M:%S", "show_markers": true, "markerSize": 5, "rich_tooltip": true, "truncate_metric":
+  true, "truncate_cells": true, "table_timestamp_format": "%Y-%m-%d %H:%M:%S", "metric":
+  "Alerts", "donut": true, "show_labels": true, "labels_outside": false, "label_type":
+  "key_value"}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: 4d3eb679-b855-5ca7-8f78-59ef06aac90f
+version: 1.0.0
+dataset_uuid: 04919e6d-982d-5c52-b997-90b1f65d3ff1

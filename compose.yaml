@@ -1,0 +1,92 @@
+name: dns-ctu
+x-superset: &superset
+  image: dns-security-superset:6.1.0-local
+  build:
+    context: ./infra/superset
+  environment: &superset-environment
+    SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
+    SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?Set SUPERSET_SECRET_KEY in .env.ctu}
+    SUPERSET_METADATA_DB: ${SUPERSET_METADATA_DB:?Set SUPERSET_METADATA_DB in .env.ctu}
+    SUPERSET_METADATA_USER: ${SUPERSET_METADATA_USER:?Set SUPERSET_METADATA_USER in .env.ctu}
+    SUPERSET_METADATA_PASSWORD: ${SUPERSET_METADATA_PASSWORD:?Set SUPERSET_METADATA_PASSWORD in .env.ctu}
+    SERVER_WORKER_AMOUNT: "1"
+    SERVER_THREADS_AMOUNT: "4"
+    GUNICORN_TIMEOUT: "120"
+  volumes:
+    - superset_home:/app/superset_home
+
+services:
+  postgres:
+    image: postgres:17@sha256:3b0cda93be7c8dba2ed484d19393d93845dc3dafb88973e248ba8e6d99d784e1
+    environment:
+      POSTGRES_DB: ${CTU_DB:?Set CTU_DB in .env.ctu}
+      POSTGRES_USER: ${CTU_USER:?Set CTU_USER in .env.ctu}
+      POSTGRES_PASSWORD: ${CTU_PASSWORD:?Set CTU_PASSWORD in .env.ctu}
+    ports:
+      - "127.0.0.1:${CTU_PORT:?Use --env-file .env.ctu}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init:/project-migrations:ro
+      - ./infra/ctu/init.sh:/docker-entrypoint-initdb.d/010_ctu.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+  superset-db:
+    image: postgres:17@sha256:3b0cda93be7c8dba2ed484d19393d93845dc3dafb88973e248ba8e6d99d784e1
+    environment:
+      POSTGRES_DB: ${SUPERSET_METADATA_DB:?Set SUPERSET_METADATA_DB in .env.ctu}
+      POSTGRES_USER: ${SUPERSET_METADATA_USER:?Set SUPERSET_METADATA_USER in .env.ctu}
+      POSTGRES_PASSWORD: ${SUPERSET_METADATA_PASSWORD:?Set SUPERSET_METADATA_PASSWORD in .env.ctu}
+    volumes:
+      - superset_metadata_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  superset-init:
+    <<: *superset
+    environment:
+      <<: *superset-environment
+      SUPERSET_ANALYTICS_DB: ${CTU_DB:?Set CTU_DB in .env.ctu}
+      SUPERSET_ANALYTICS_USER: ${SUPERSET_ANALYTICS_USER:?Set SUPERSET_ANALYTICS_USER in .env.ctu}
+      SUPERSET_ANALYTICS_PASSWORD: ${SUPERSET_ANALYTICS_PASSWORD:?Set SUPERSET_ANALYTICS_PASSWORD in .env.ctu}
+      SUPERSET_ADMIN_USER: ${SUPERSET_ADMIN_USER:?Set SUPERSET_ADMIN_USER in .env.ctu}
+      SUPERSET_ADMIN_PASSWORD: ${SUPERSET_ADMIN_PASSWORD:?Set SUPERSET_ADMIN_PASSWORD in .env.ctu}
+      SUPERSET_ADMIN_EMAIL: ${SUPERSET_ADMIN_EMAIL:?Set SUPERSET_ADMIN_EMAIL in .env.ctu}
+    depends_on:
+      superset-db:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    command: ["/bin/sh", "-ec", "superset db upgrade && superset init && python /app/project/initialize.py"]
+    healthcheck:
+      disable: true
+    restart: "no"
+
+  superset:
+    <<: *superset
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+      superset-db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${SUPERSET_PORT:-8088}:8088"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8088/health', timeout=5).read()"]
+      interval: 15s
+      timeout: 10s
+      start_period: 120s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  superset_metadata_data:
+  superset_home:

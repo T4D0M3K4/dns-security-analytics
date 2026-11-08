@@ -1,0 +1,46 @@
+slice_name: Explainable alert records
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  viz_type: big_number_total
+  datasource: 3__table
+  time_range: No filter
+  granularity_sqla: window_start
+  adhoc_filters: []
+  row_limit: 10000
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: false
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  metric: Alerts
+  subheader: Overlapping types retained
+query_context: '{"datasource": {"id": 3, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "window_start", "is_timeseries": false, "columns":
+  [], "metrics": ["Alerts"]}], "form_data": {"viz_type": "big_number_total", "datasource":
+  "3__table", "time_range": "No filter", "granularity_sqla": "window_start", "adhoc_filters":
+  [], "row_limit": 10000, "groupby": [], "color_scheme": "supersetColors", "show_legend":
+  false, "legendOrientation": "bottom", "legendType": "scroll", "legendMargin": 20,
+  "y_axis_format": ",.0f", "x_axis_time_format": "%H:%M", "time_format": "%Y-%m-%d
+  %H:%M:%S", "show_markers": true, "markerSize": 5, "rich_tooltip": true, "truncate_metric":
+  true, "truncate_cells": true, "table_timestamp_format": "%Y-%m-%d %H:%M:%S", "metric":
+  "Alerts", "subheader": "Overlapping types retained"}, "result_format": "json", "result_type":
+  "full"}'
+cache_timeout: null
+uuid: 0b697325-e5b9-5579-9ee9-85a2d3560d55
+version: 1.0.0
+dataset_uuid: 04919e6d-982d-5c52-b997-90b1f65d3ff1

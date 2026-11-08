@@ -1,0 +1,49 @@
+slice_name: Query types
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  viz_type: echarts_timeseries_bar
+  datasource: 1__table
+  time_range: No filter
+  granularity_sqla: event_timestamp
+  adhoc_filters: []
+  row_limit: 10000
+  groupby:
+  - capture_name
+  color_scheme: supersetColors
+  show_legend: true
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  x_axis: query_type_name
+  metrics:
+  - DNS events
+query_context: '{"datasource": {"id": 1, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": "event_timestamp", "is_timeseries": false, "columns":
+  ["query_type_name", "capture_name"], "metrics": ["DNS events"], "orderby": [["DNS
+  events", false]]}], "form_data": {"viz_type": "echarts_timeseries_bar", "datasource":
+  "1__table", "time_range": "No filter", "granularity_sqla": "event_timestamp", "adhoc_filters":
+  [], "row_limit": 10000, "groupby": ["capture_name"], "color_scheme": "supersetColors",
+  "show_legend": true, "legendOrientation": "bottom", "legendType": "scroll", "legendMargin":
+  20, "y_axis_format": ",.0f", "x_axis_time_format": "%H:%M", "time_format": "%Y-%m-%d
+  %H:%M:%S", "show_markers": true, "markerSize": 5, "rich_tooltip": true, "truncate_metric":
+  true, "truncate_cells": true, "table_timestamp_format": "%Y-%m-%d %H:%M:%S", "x_axis":
+  "query_type_name", "metrics": ["DNS events"]}, "result_format": "json", "result_type":
+  "full"}'
+cache_timeout: null
+uuid: 588435dd-8221-5f4d-9781-b772704d67cf
+version: 1.0.0
+dataset_uuid: 9c768e8f-5a80-5f69-a0fb-39e88e5b0d1a

@@ -1,0 +1,62 @@
+{
+  "attribution": "Stratosphere Laboratory, CTU in Prague / Malware Capture Facility Project",
+  "files": [
+    {
+      "bytes": 772961,
+      "dataset": "normal",
+      "effective_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Normal-4-only-DNS/2015-03-24_capture1-only-dns.pcap",
+      "path": "data/raw/pcap/public/normal/2015-03-24_capture1-only-dns.pcap",
+      "retrieved_at_utc": "2026-11-03T23:27:11.770422+00:00",
+      "sha256": "7fbefbe1a18867bc683f59890cbc0124e5f6166e5aa13035fcf1ccf2f06f7ae4",
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Normal-4-only-DNS/2015-03-24_capture1-only-dns.pcap"
+    },
+    {
+      "bytes": 928,
+      "dataset": "normal",
+      "effective_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Normal-4-only-DNS/README.md",
+      "path": "data/raw/pcap/public/normal/README.md",
+      "retrieved_at_utc": "2026-11-03T23:27:12.176694+00:00",
+      "sha256": "567b7e7b0e3edf26ecb3ac9f68de2ad02cebc48698b8a255c087f7b52d069766",
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Normal-4-only-DNS/README.md"
+    },
+    {
+      "bytes": 728,
+      "dataset": "normal",
+      "effective_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Normal-4-only-DNS/2015-03-24_capture1-only-dns.capinfos",
+      "path": "data/raw/pcap/public/normal/2015-03-24_capture1-only-dns.capinfos",
+      "retrieved_at_utc": "2026-11-03T23:27:12.586591+00:00",
+      "sha256": "03d976a7cd71dcdc7ea2b9b0fdc64d021f0ee111b94cd85607259fc26b4c7b42",
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Normal-4-only-DNS/2015-03-24_capture1-only-dns.capinfos"
+    },
+    {
+      "bytes": 866582,
+      "dataset": "malware",
+      "effective_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-25-3/2014-02-07_capture-win3.pcap",
+      "path": "data/raw/pcap/public/malware/2014-02-07_capture-win3.pcap",
+      "retrieved_at_utc": "2026-11-03T23:27:13.677636+00:00",
+      "sha256": "505f6e256381b3e427937c07ff6ab79cc5e07f205cded81324be07a29ca2db57",
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-25-3/2014-02-07_capture-win3.pcap"
+    },
+    {
+      "bytes": 1026,
+      "dataset": "malware",
+      "effective_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-25-3/README.md",
+      "path": "data/raw/pcap/public/malware/README.md",
+      "retrieved_at_utc": "2026-11-03T23:27:14.225173+00:00",
+      "sha256": "cc818b34da18f262fd5846d5ae9921dbe78c0bdd9f1147166ef9d490a339d9cf",
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-25-3/README.md"
+    },
+    {
+      "bytes": 763,
+      "dataset": "malware",
+      "effective_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-25-3/2014-02-07_capture-win3.capinfos",
+      "path": "data/raw/pcap/public/malware/2014-02-07_capture-win3.capinfos",
+      "retrieved_at_utc": "2026-11-03T23:27:14.636826+00:00",
+      "sha256": "5d3512ebb6b4c181fcce1e6021d7e9812cd6055a883588b1e28b5c7b9e478812",
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-25-3/2014-02-07_capture-win3.capinfos"
+    }
+  ],
+  "format_version": 1,
+  "usage": "Publisher FAQ permits use with attribution. No dataset-specific license found in the READMEs; do not infer CTU-13's license.",
+  "usage_reference": "https://www.stratosphereips.org/datasets-faq"
+}

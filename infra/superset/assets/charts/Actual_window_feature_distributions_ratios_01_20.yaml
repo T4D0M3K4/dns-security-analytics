@@ -1,0 +1,56 @@
+slice_name: "Actual window feature distributions \xB7 ratios 0\u20131"
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  viz_type: table
+  datasource: 6__table
+  time_range: No filter
+  granularity_sqla: null
+  adhoc_filters: []
+  row_limit: 10000
+  groupby:
+  - feature
+  - capture_name
+  color_scheme: supersetColors
+  show_legend: false
+  legendOrientation: bottom
+  legendType: scroll
+  legendMargin: 20
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%H:%M'
+  time_format: '%Y-%m-%d %H:%M:%S'
+  show_markers: true
+  markerSize: 5
+  rich_tooltip: true
+  truncate_metric: true
+  truncate_cells: true
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  query_mode: aggregate
+  metrics:
+  - Samples
+  - Minimum
+  - Median
+  - p95
+  - Maximum
+  - Mean
+  page_length: 12
+query_context: '{"datasource": {"id": 6, "type": "table"}, "force": true, "queries":
+  [{"filters": [], "time_range": "No filter", "extras": {"having": "", "where": ""},
+  "row_limit": 10000, "granularity": null, "is_timeseries": false, "columns": ["feature",
+  "capture_name"], "metrics": ["Samples", "Minimum", "Median", "p95", "Maximum", "Mean"]}],
+  "form_data": {"viz_type": "table", "datasource": "6__table", "time_range": "No filter",
+  "granularity_sqla": null, "adhoc_filters": [], "row_limit": 10000, "groupby": ["feature",
+  "capture_name"], "color_scheme": "supersetColors", "show_legend": false, "legendOrientation":
+  "bottom", "legendType": "scroll", "legendMargin": 20, "y_axis_format": ",.0f", "x_axis_time_format":
+  "%H:%M", "time_format": "%Y-%m-%d %H:%M:%S", "show_markers": true, "markerSize":
+  5, "rich_tooltip": true, "truncate_metric": true, "truncate_cells": true, "table_timestamp_format":
+  "%Y-%m-%d %H:%M:%S", "query_mode": "aggregate", "metrics": ["Samples", "Minimum",
+  "Median", "p95", "Maximum", "Mean"], "page_length": 12}, "result_format": "json",
+  "result_type": "full"}'
+cache_timeout: null
+uuid: 9afcd7e2-cea2-50dd-b1bc-5146b29867ad
+version: 1.0.0
+dataset_uuid: 8d0b8115-e482-51e0-a524-a67796e8870c

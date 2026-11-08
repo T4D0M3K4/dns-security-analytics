@@ -1,0 +1,24 @@
+{
+  "zeek_image": "zeek/zeek@sha256:524cb0ce29f26a6a954fb9c357a8f92b95812476d8240f0ece26617ace249dd0",
+  "processing_script": "scripts/process_pcap.sh",
+  "checksum_validation": "unchanged Zeek defaults; -C was not used",
+  "network": "none",
+  "packets_method": "same pinned Zeek image, zeek -b -r /input.pcap -e 'event zeek_done() { print get_net_stats()$pkts_recvd; }'",
+  "datasets": {
+    "normal": {
+      "pcap": "data/raw/pcap/public/normal/2015-03-24_capture1-only-dns.pcap",
+      "zeek_output_directory": "data/zeek/run-APT7omPL",
+      "dns_log_sha256": "ffc3324c06e278cd572bfa353245ce6943a0d1c56906e9f076f3efe8d1709adf",
+      "packets_received_by_zeek": 5966,
+      "publisher_capinfos_sha1_verified": "3a76e2ecfb189b3279ff4aca9efd3c084f304d64"
+    },
+    "malware": {
+      "pcap": "data/raw/pcap/public/malware/2014-02-07_capture-win3.pcap",
+      "zeek_output_directory": "data/zeek/run-oldNald5",
+      "dns_log_sha256": "f62b954544f7abe2c45457839d66d5393dcd2edbb89f8cf9c41072fe01477f2a",
+      "packets_received_by_zeek": 5945,
+      "publisher_capinfos_sha1_verified": "750872af1adffadeff810e35c8c8a41fc9441a0f"
+    }
+  },
+  "zeek_version": "9.0.1"
+}

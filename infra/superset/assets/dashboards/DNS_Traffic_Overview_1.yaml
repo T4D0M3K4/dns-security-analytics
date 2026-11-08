@@ -1,0 +1,288 @@
+dashboard_title: DNS Traffic Overview
+description: null
+css: '
+
+  .dashboard-content { background: #f2f5fa; }
+
+  .dashboard-component-chart-holder { border: 1px solid #dfe6ef; border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(22,47,76,.045); }
+
+  .dashboard-component-header { color: #18334f; font-weight: 600; }
+
+  .dashboard-markdown { border-radius: 12px; }
+
+  .dashboard-markdown .dashboard-component { background: #18334f; color: #eef5ff;
+  padding: 14px 20px; box-sizing: border-box; }
+
+  .dashboard-markdown h2 { color: #ffffff; font-size: 19px; letter-spacing: .07em;
+  margin: 0 0 8px; }
+
+  .dashboard-markdown p { font-size: 13px; margin: 0; line-height: 1.6; }
+
+  '
+slug: dns-traffic-overview
+certified_by: null
+certification_details: null
+published: true
+uuid: 74626256-95f1-50b1-9899-2d9ee6f98e9a
+position:
+  DASHBOARD_VERSION_KEY: v2
+  ROOT_ID:
+    id: ROOT_ID
+    type: ROOT
+    children:
+    - GRID_ID
+  GRID_ID:
+    id: GRID_ID
+    type: GRID
+    children:
+    - ROW-0
+    - ROW-1
+    - ROW-2
+    - ROW-3
+    - ROW-4
+    parents:
+    - ROOT_ID
+  HEADER_ID:
+    id: HEADER_ID
+    type: HEADER
+    meta:
+      text: DNS Traffic Overview
+  ROW-0:
+    id: ROW-0
+    type: ROW
+    children:
+    - COMPONENT-notice
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-notice:
+    id: COMPONENT-notice
+    type: MARKDOWN
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-0
+    meta:
+      width: 12
+      height: 26
+      code: '## CTU / DNS SECURITY ANALYTICS
+
+        Public capture identity does not label every event or window as benign/malicious.
+        Results are descriptive rule activation, not precision/recall/F1 or confirmed
+        true/false positives. Original UTC timestamps, including 1970, remain unchanged.
+
+
+        Thresholds retain their historical controlled synthetic-calibration origin;
+        no synthetic data or evaluation participates in this application. CTU was
+        not used to retune them.
+
+        '
+  ROW-1:
+    id: ROW-1
+    type: ROW
+    children:
+    - COMPONENT-traffic-events
+    - COMPONENT-traffic-nx
+    - COMPONENT-traffic-captures
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-traffic-events:
+    id: COMPONENT-traffic-events
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-1
+    meta:
+      width: 4
+      height: 22
+      chartId: 1
+      uuid: 07f715af-4c1e-58a1-b196-36767e52ae1c
+  COMPONENT-traffic-nx:
+    id: COMPONENT-traffic-nx
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-1
+    meta:
+      width: 4
+      height: 22
+      chartId: 2
+      uuid: ac531433-e845-531f-8262-28616a24a751
+  COMPONENT-traffic-captures:
+    id: COMPONENT-traffic-captures
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-1
+    meta:
+      width: 4
+      height: 22
+      chartId: 3
+      uuid: 3e10fe22-5fa2-5633-a0d2-9acfbbb52a09
+  ROW-2:
+    id: ROW-2
+    type: ROW
+    children:
+    - COMPONENT-traffic-rcode
+    - COMPONENT-traffic-types
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-traffic-rcode:
+    id: COMPONENT-traffic-rcode
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-2
+    meta:
+      width: 6
+      height: 38
+      chartId: 4
+      uuid: 48a3df61-9f1a-5cc7-a01c-a3b0540596ef
+  COMPONENT-traffic-types:
+    id: COMPONENT-traffic-types
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-2
+    meta:
+      width: 6
+      height: 38
+      chartId: 5
+      uuid: 588435dd-8221-5f4d-9781-b772704d67cf
+  ROW-3:
+    id: ROW-3
+    type: ROW
+    children:
+    - COMPONENT-traffic-domains
+    - COMPONENT-traffic-sources
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-traffic-domains:
+    id: COMPONENT-traffic-domains
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3
+    meta:
+      width: 6
+      height: 48
+      chartId: 6
+      uuid: a990acc9-d616-591d-b220-6e713c71b3fe
+  COMPONENT-traffic-sources:
+    id: COMPONENT-traffic-sources
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3
+    meta:
+      width: 6
+      height: 48
+      chartId: 7
+      uuid: 11b6c008-afa7-5aed-a0ac-2d56bc2736fc
+  ROW-4:
+    id: ROW-4
+    type: ROW
+    children:
+    - COMPONENT-traffic-activity
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-traffic-activity:
+    id: COMPONENT-traffic-activity
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-4
+    meta:
+      width: 12
+      height: 42
+      chartId: 8
+      uuid: 41d01e77-ad30-579c-9065-109bc54ca5a0
+metadata:
+  native_filter_configuration:
+  - id: NATIVE_FILTER-traffic-capture
+    name: Capture
+    filterType: filter_select
+    type: NATIVE_FILTER
+    targets:
+    - column:
+        name: capture_name
+      datasetUuid: 9c768e8f-5a80-5f69-a0fb-39e88e5b0d1a
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      searchAllOptions: true
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+  - id: NATIVE_FILTER-traffic-source
+    name: Source IP
+    filterType: filter_select
+    type: NATIVE_FILTER
+    targets:
+    - column:
+        name: source_ip
+      datasetUuid: 9c768e8f-5a80-5f69-a0fb-39e88e5b0d1a
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      searchAllOptions: true
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+  color_scheme: supersetColors
+  label_colors:
+    CTU Normal: '#287ca8'
+    CTU Malware: '#d49a29'
+    MEDIUM: '#d49a29'
+    HIGH: '#d84b67'
+  cross_filters_enabled: false
+  timed_refresh_immune_slices: []
+  expanded_slices: {}
+  refresh_frequency: 0
+  shared_label_colors: []
+  map_label_colors: {}
+  color_scheme_domain: []
+theme_uuid: null
+version: 1.0.0

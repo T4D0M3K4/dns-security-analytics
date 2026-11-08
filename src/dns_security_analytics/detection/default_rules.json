@@ -1,0 +1,21 @@
+{
+  "name": "seed42-initial-v1",
+  "rules": {
+    "HIGH_DNS_FREQUENCY": {
+      "severity": "MEDIUM",
+      "conditions": {"query_count": 100}
+    },
+    "HIGH_NXDOMAIN_RATIO": {
+      "severity": "MEDIUM",
+      "conditions": {"query_count": 20, "nxdomain_ratio": 0.50}
+    },
+    "DGA_LIKE": {
+      "severity": "HIGH",
+      "conditions": {"query_count": 20, "unique_domain_count": 20, "nxdomain_ratio": 0.50, "avg_entropy": 4.0}
+    },
+    "TUNNEL_LIKE": {
+      "severity": "HIGH",
+      "conditions": {"query_count": 20, "unique_domain_count": 20, "avg_domain_length": 60, "avg_entropy": 4.0}
+    }
+  }
+}

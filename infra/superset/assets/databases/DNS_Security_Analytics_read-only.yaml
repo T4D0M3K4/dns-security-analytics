@@ -1,0 +1,13 @@
+database_name: DNS Security Analytics (read-only)
+uuid: 4b59214a-b84c-4d9d-9863-85af6ed8b888
+version: 1.0.0
+sqlalchemy_uri: postgresql+psycopg2://READER:XXXXXXXXXX@postgres:5432/ANALYTICS_DB
+expose_in_sqllab: true
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_run_async: false
+extra:
+  engine_params:
+    connect_args:
+      options: -c timezone=UTC

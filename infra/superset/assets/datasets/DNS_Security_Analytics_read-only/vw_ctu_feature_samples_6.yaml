@@ -1,0 +1,165 @@
+table_name: vw_ctu_feature_samples
+main_dttm_col: null
+currency_code_column: null
+description: Live CTU-only facts; capture identity is provenance, not a maliciousness
+  label.
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: dns_ctu
+schema: reporting
+sql: null
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: 8d0b8115-e482-51e0-a524-a67796e8870c
+metrics:
+- metric_name: p95
+  verbose_name: p95
+  metric_type: null
+  expression: percentile_cont(0.95) WITHIN GROUP(ORDER BY value)
+  description: Project dashboard metric; evaluated at the dataset's documented grain.
+  d3format: .4f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Median
+  verbose_name: Median
+  metric_type: null
+  expression: percentile_cont(0.5) WITHIN GROUP(ORDER BY value)
+  description: Project dashboard metric; evaluated at the dataset's documented grain.
+  d3format: .4f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Samples
+  verbose_name: Samples
+  metric_type: null
+  expression: COUNT(*)
+  description: Project dashboard metric; evaluated at the dataset's documented grain.
+  d3format: ',.0f'
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Mean
+  verbose_name: Mean
+  metric_type: null
+  expression: AVG(value)
+  description: Project dashboard metric; evaluated at the dataset's documented grain.
+  d3format: .4f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Maximum
+  verbose_name: Maximum
+  metric_type: null
+  expression: MAX(value)
+  description: Project dashboard metric; evaluated at the dataset's documented grain.
+  d3format: .4f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Minimum
+  verbose_name: Minimum
+  metric_type: null
+  expression: MIN(value)
+  description: Project dashboard metric; evaluated at the dataset's documented grain.
+  d3format: .4f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: window_start
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITH TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  datetime_format: null
+  extra: null
+- column_name: value
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  datetime_format: null
+  extra: null
+- column_name: capture_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  datetime_format: null
+  extra: null
+- column_name: source_ip
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  datetime_format: null
+  extra: null
+- column_name: capture
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  datetime_format: null
+  extra: null
+- column_name: feature
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  datetime_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 4b59214a-b84c-4d9d-9863-85af6ed8b888

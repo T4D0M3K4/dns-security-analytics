@@ -1,0 +1,310 @@
+dashboard_title: DNS Security & Anomaly Analysis
+description: null
+css: '
+
+  .dashboard-content { background: #f2f5fa; }
+
+  .dashboard-component-chart-holder { border: 1px solid #dfe6ef; border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(22,47,76,.045); }
+
+  .dashboard-component-header { color: #18334f; font-weight: 600; }
+
+  .dashboard-markdown { border-radius: 12px; }
+
+  .dashboard-markdown .dashboard-component { background: #18334f; color: #eef5ff;
+  padding: 14px 20px; box-sizing: border-box; }
+
+  .dashboard-markdown h2 { color: #ffffff; font-size: 19px; letter-spacing: .07em;
+  margin: 0 0 8px; }
+
+  .dashboard-markdown p { font-size: 13px; margin: 0; line-height: 1.6; }
+
+  '
+slug: dns-security-anomaly-analysis
+certified_by: null
+certification_details: null
+published: true
+uuid: 223325bb-67fe-5f9c-af9f-197bc141ef4b
+position:
+  DASHBOARD_VERSION_KEY: v2
+  ROOT_ID:
+    id: ROOT_ID
+    type: ROOT
+    children:
+    - GRID_ID
+  GRID_ID:
+    id: GRID_ID
+    type: GRID
+    children:
+    - ROW-0
+    - ROW-1
+    - ROW-2
+    - ROW-3
+    - ROW-4
+    parents:
+    - ROOT_ID
+  HEADER_ID:
+    id: HEADER_ID
+    type: HEADER
+    meta:
+      text: DNS Security & Anomaly Analysis
+  ROW-0:
+    id: ROW-0
+    type: ROW
+    children:
+    - COMPONENT-notice
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-notice:
+    id: COMPONENT-notice
+    type: MARKDOWN
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-0
+    meta:
+      width: 12
+      height: 26
+      code: '## CTU / DNS SECURITY ANALYTICS
+
+        Public capture identity does not label every event or window as benign/malicious.
+        Results are descriptive rule activation, not precision/recall/F1 or confirmed
+        true/false positives. Original UTC timestamps, including 1970, remain unchanged.
+
+
+        Thresholds retain their historical controlled synthetic-calibration origin;
+        no synthetic data or evaluation participates in this application. CTU was
+        not used to retune them.
+
+        '
+  ROW-1:
+    id: ROW-1
+    type: ROW
+    children:
+    - COMPONENT-security-total
+    - COMPONENT-security-types
+    - COMPONENT-security-severity
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-security-total:
+    id: COMPONENT-security-total
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-1
+    meta:
+      width: 3
+      height: 32
+      chartId: 9
+      uuid: 0b697325-e5b9-5579-9ee9-85a2d3560d55
+  COMPONENT-security-types:
+    id: COMPONENT-security-types
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-1
+    meta:
+      width: 6
+      height: 32
+      chartId: 10
+      uuid: e3828ec9-a82f-50af-9718-77b055a3fb4a
+  COMPONENT-security-severity:
+    id: COMPONENT-security-severity
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-1
+    meta:
+      width: 3
+      height: 32
+      chartId: 11
+      uuid: 4d3eb679-b855-5ca7-8f78-59ef06aac90f
+  ROW-2:
+    id: ROW-2
+    type: ROW
+    children:
+    - COMPONENT-security-captures
+    - COMPONENT-security-sources
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-security-captures:
+    id: COMPONENT-security-captures
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-2
+    meta:
+      width: 6
+      height: 34
+      chartId: 12
+      uuid: 1b99f219-ae6d-523d-a637-aa514e5376c4
+  COMPONENT-security-sources:
+    id: COMPONENT-security-sources
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-2
+    meta:
+      width: 6
+      height: 34
+      chartId: 13
+      uuid: f5dcb848-129e-5e75-af77-9b8e28c6dc6d
+  ROW-3:
+    id: ROW-3
+    type: ROW
+    children:
+    - COMPONENT-security-nx-volume
+    - COMPONENT-security-entropy-length
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-security-nx-volume:
+    id: COMPONENT-security-nx-volume
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3
+    meta:
+      width: 6
+      height: 45
+      chartId: 14
+      uuid: a0dca988-8332-5968-9b87-d3e6b3af7ab2
+  COMPONENT-security-entropy-length:
+    id: COMPONENT-security-entropy-length
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3
+    meta:
+      width: 6
+      height: 45
+      chartId: 15
+      uuid: 56a93cfa-8447-5160-8ca5-5b787e8bb5cc
+  ROW-4:
+    id: ROW-4
+    type: ROW
+    children:
+    - COMPONENT-security-details
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  COMPONENT-security-details:
+    id: COMPONENT-security-details
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-4
+    meta:
+      width: 12
+      height: 65
+      chartId: 16
+      uuid: 7a3f27a6-5ed5-5a0a-9e6b-a081cb85cc82
+metadata:
+  native_filter_configuration:
+  - id: NATIVE_FILTER-security-capture
+    name: Capture
+    filterType: filter_select
+    type: NATIVE_FILTER
+    targets:
+    - column:
+        name: capture_name
+      datasetUuid: e063abf4-29f2-55c8-a076-a7efd29f09bd
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      searchAllOptions: true
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+  - id: NATIVE_FILTER-security-source
+    name: Source IP
+    filterType: filter_select
+    type: NATIVE_FILTER
+    targets:
+    - column:
+        name: source_ip
+      datasetUuid: e063abf4-29f2-55c8-a076-a7efd29f09bd
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      searchAllOptions: true
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+  - id: NATIVE_FILTER-alert-type
+    name: Alert type (alert charts)
+    filterType: filter_select
+    type: NATIVE_FILTER
+    targets:
+    - column:
+        name: alert_type
+      datasetUuid: 04919e6d-982d-5c52-b997-90b1f65d3ff1
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      searchAllOptions: true
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded:
+      - 14
+      - 15
+  color_scheme: supersetColors
+  label_colors:
+    CTU Normal: '#287ca8'
+    CTU Malware: '#d49a29'
+    MEDIUM: '#d49a29'
+    HIGH: '#d84b67'
+  cross_filters_enabled: false
+  timed_refresh_immune_slices: []
+  expanded_slices: {}
+  refresh_frequency: 0
+  shared_label_colors: []
+  map_label_colors: {}
+  color_scheme_domain: []
+theme_uuid: null
+version: 1.0.0
